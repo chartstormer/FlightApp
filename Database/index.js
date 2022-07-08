@@ -16,7 +16,6 @@ app.use(logger);
 
 
 app.use('/flights', require('./routes/flight.route.js'));
-app.use('/passengers', require('./routes/passenger.route.js'));
 
 app.all('*', (req, res) => {
     res.status(400).send('We don\'t have the flight plans you\'re looking for');
