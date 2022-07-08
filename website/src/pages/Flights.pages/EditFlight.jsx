@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import axios from "axios";
 
 export const EditFlight = () => {
@@ -18,18 +18,11 @@ export const EditFlight = () => {
 
         const navigate = useNavigate();
     
-        const HandleEdit = async (event) => {
-            const currPass = currentPassengersRef.current.value;
-            const maxPass = maxPassengersRef.current.value;
-            const passDiff = maxPass - currPass;
-
-            let depDate = departureDateRef.current.value;
-            let depTime = departureTimeRef.current.value;
-            let arrDate = arrivalDateRef.current.value;
-            let arrTime = arrivalTimeRef.current.value;
+        const HandleEdit = async (event) => {            
             
             try{
-            const res = await axios.put(`http://localhost:3131/flights/${flightNumberRef.current.value}`, {flightNumber: flightNumberRef.current.value , 
+            const res = await axios.put(`http://localhost:3131/flights/${flightNumberRef.current.value}`, 
+                                        {flightNumber: flightNumberRef.current.value , 
                                         currentPassengers: currentPassengersRef.current.value ,
                                         maxPassengers: maxPassengersRef.current.value ,
                                         departureDate: departureDateRef.current.value ,
@@ -46,7 +39,6 @@ export const EditFlight = () => {
             } finally {
                 flightNumberRef.current.value = null;
             }}
-        
     return(
 
 <>
@@ -58,14 +50,14 @@ export const EditFlight = () => {
     </div> 
 <div className="Header" style={{ paddingTop: 55 }}>Edit a Flight</div>
     <h1>Flight Number Required</h1>
-    <form className="MyForm" onSubmit={(event) => { event.preventDefault(); HandleEdit({flightNumber : flight._id})}} >
+    <form className="MyForm" onSubmit={(event) => { event.preventDefault(); HandleEdit({flightNumber : flightNumberRef.current.value})}} >
         <div>
             <label htmlFor="flightNumber" >Flight Number:</label>
                 <input id="flightNumber" type="text" placeholder="Flight Number" ref={flightNumberRef} />
         </div>
         <div>
             <label htmlFor="currentPassengers" >Current Passengers:</label>
-                <input id="currentPassengers" type="number" placeholder="Current Passengers" ref={currentPassengersRef} min="0" />
+                <input id="currentPassengers" type="number" placeholder="Current Passengers" ref={currentPassengersRef} min="0"  />
         </div>    
         <div>
             <label htmlFor="maxPassengers" >Max Passengers:</label>

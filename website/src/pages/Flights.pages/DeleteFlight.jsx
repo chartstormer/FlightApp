@@ -1,6 +1,7 @@
 import '../../App.css';
 import { useState, useRef } from "react";
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 
 
@@ -9,6 +10,8 @@ export const DeleteFlight = () => {
     const flightNumberRef = useRef();  
 
     const [flight, setFlights] = useState([]);
+
+    const navigate = useNavigate();
 
 const deleteFlight = async (params) => {
 
@@ -23,7 +26,7 @@ const deleteFlight = async (params) => {
         } else {
             setFlights();
             alert(`You must enter a valid Flight number!`)
-        }
+        } navigate('../',{replace: true});
     } catch(err){
         setFlights();
         alert(err.response.data.message);

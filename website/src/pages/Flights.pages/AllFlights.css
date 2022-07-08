@@ -1,4 +1,11 @@
-table, th, tr, td {
-    border: 3px solid;
+table, th, tr {
+    border: 2px solid;
     justify-content: center;
+    column-width: 12em;
+    
+}
+
+th {
+    font-size: 20px;
+    background-color: #002D72;
 }

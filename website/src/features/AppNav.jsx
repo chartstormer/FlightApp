@@ -24,18 +24,6 @@ export const AppNav = () => {
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div className="dropdown">
-                        <button className="dropbtn">Passengers</button>
-                        <div className="dropdown-content">
-                            <Link to="/CreatePassenger"> Create a Passenger</Link>
-                            <Link to="/DeletePassenger"> Delete a Passenger</Link>
-                            <Link to="/EditPassenger"> Edit a Passenger</Link>
-                            <Link to="/GetPassenger"> Search for a Passenger</Link>
-                            <Link to="/AllPassengers"> Get all Passengers</Link>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </nav>
         

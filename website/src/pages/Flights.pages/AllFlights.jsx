@@ -1,3 +1,5 @@
+import './AllFlights.css';
+import '../../components/FlightList/FlightList.css'
 import '../../App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -24,7 +26,7 @@ const [flight, setFlights] = useState([]);
                 <table>
                     <thead>
                         <tr>
-                            <th scope="col"> Flight Number</th>
+                            <th> Flight Number</th>
                             <th> Current Passengers</th>
                             <th> Max Passengers</th>
                             <th> Departure Date</th>
@@ -35,8 +37,9 @@ const [flight, setFlights] = useState([]);
                             <th> Arrival Airport</th>
                         </tr>
                     </thead>
-                <FlightList />
             </table>
+            <FlightList />
+            
     </>
 );    
     }

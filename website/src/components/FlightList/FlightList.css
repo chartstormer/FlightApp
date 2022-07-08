@@ -1,0 +1,7 @@
+td {
+    border: 3px solid;
+    justify-content: center;
+    column-width: 14em;
+    font-size: 2em;
+    background-color: #002D72;
+}

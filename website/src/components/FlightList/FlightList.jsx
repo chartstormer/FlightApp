@@ -19,7 +19,7 @@ export const FlightList = () => {
             <div key={flightNumber}>
                 <table>
                     <tr>
-                        <tr>{flight.flightNumber}</tr>
+                        <td>{flight.flightNumber}</td>
                         <td>{flight.currentPassengers}</td>
                         <td>{flight.maxPassengers}</td>
                         <td>{flight.departureDate}</td>

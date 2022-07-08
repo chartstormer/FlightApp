@@ -48,19 +48,19 @@ return (
             </form>
         </div>
         <div>
-            <form>
-                <div className="container">
-                    <div><strong>Flight Number:</strong>{flight.flightNumber}</div>
-                    <div><strong>Current Passengers:</strong>{flight.currentPassengers}</div>
-                    <div><strong>Max Passengers:</strong>{flight.maxPassengers}</div>
-                    <div><strong>Departure Date:</strong>{flight.departureDate}</div>
-                    <div><strong>Departure Time:</strong>{flight.departureTime}</div>
-                    <div><strong>Departure Airport:</strong>{flight.departureAirport}</div>
-                    <div><strong>Arrival Date:</strong>{flight.arrivalDate}</div>
-                    <div><strong>Arrival Time:</strong>{flight.arrivalTime}</div>
-                    <div><strong>Arrival Airport:</strong>{flight.arrivalAirport}</div>
-                </div>
-            </form>
+            <table>
+                <div>
+                    <th><strong>Flight Number:</strong>{flight.flightNumber}</th>
+                    <th><strong>Current Passengers:</strong>{flight.currentPassengers}</th>
+                    <th><strong>Max Passengers:</strong>{flight.maxPassengers}</th>
+                    <th><strong>Departure Date:</strong>{flight.departureDate}</th>
+                    <th><strong>Departure Time:</strong>{flight.departureTime}</th>
+                    <th><strong>Departure Airport:</strong>{flight.departureAirport}</th>
+                    <th><strong>Arrival Date:</strong>{flight.arrivalDate}</th>
+                    <th><strong>Arrival Time:</strong>{flight.arrivalTime}</th>
+                    <th><strong>Arrival Airport:</strong>{flight.arrivalAirport}</th>
+                </div>  
+            </table>           
         </div>
 </>
                                 )};
